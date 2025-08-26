@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@theme {
+	--color-dark: #1b1b1b;
+	--color-subDark: #222222;
+	--color-light: #fafafa;
+}
+button {
+	@apply cursor-pointer;
+}
+* {
+	font-family: 'JetBrains Mono', monospace;
+}
