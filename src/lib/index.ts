@@ -24,3 +24,6 @@ if (browser) {
 export const toggleMode = () => {
 	darkMode.update((m) => !m);
 };
+export const scrollToHome = (id: string) => {
+	return document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+};

@@ -2,7 +2,7 @@
 	export let darkMode;
 </script>
 
-<section>
+<section id="home">
 	<span class="text-2xl">$: whoami</span>
 	<hr class="mb-12" />
 	<pre class="max-sm:hidden">

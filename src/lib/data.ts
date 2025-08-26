@@ -14,7 +14,7 @@ import Vercel from './assets/ascii/Vercel.svelte';
 export interface Data {
 	id: number;
 	title: string; // used by both projects + techstack
-	details: string;
+	details?: string;
 	techStack?: string[];
 	sourceCode?: string;
 	liveDemo?: string;
@@ -130,4 +130,10 @@ export const techstack: Data[] = [
 			'Hosting for my Svelte, NextJS and Vue apps. Seamless Git integration and fast deployments make it my default choice.',
 		url: 'https://vercel.com/'
 	}
+];
+
+export const socialMedia: Data[] = [
+	{ id: 1, title: 'github', url: 'https://github.com/Franciss-prog/' },
+	{ id: 2, title: 'instagram', url: 'https://www.instagram.com/francis_prog/' },
+	{ id: 3, title: 'facebook', url: 'https://www.facebook.com/francis.gil.2024/' }
 ];
