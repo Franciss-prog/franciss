@@ -11,6 +11,9 @@
 button {
 	@apply cursor-pointer;
 }
-* {
+pre {
 	font-family: 'JetBrains Mono', monospace;
+}
+body {
+	font-family: 'Minecraft';
 }

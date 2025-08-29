@@ -1,18 +1,18 @@
 <script>
+	import { Command } from '$lib';
 	export let darkMode;
 </script>
 
 <section id="home">
-	<span class="text-2xl">$: whoami</span>
-	<hr class="mb-12" />
-	<pre class="max-sm:hidden">
+	<Command command=" whoami" />
+	<pre class="max-md:leading-[] text-[20px] leading-none max-md:text-[12px] max-sm:text-[12px]">
  _____                     _         
 |  ___| __ __ _ _ __   ___(_)___ ___ 
 | |_ | '__/ _` | '_ \ / __| / __/ __|
 |  _|| | | (_| | | | | (__| \__ \__ \
 |_|  |_|  \__,_|_| |_|\___|_|___/___/
+
   </pre>
-	<span class="hidden text-4xl max-sm:flex">Franciss</span>
 	<p class="inline">
 		I turn complex code into something simple and clear. I mostly work with Svelte and Next.js, but
 		I also enjoy exploring — from running a homelab and customizing Hyprland on Arch, to tweaking my

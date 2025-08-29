@@ -16,7 +16,7 @@
 	<button
 		aria-label="button"
 		onclick={() => scrollToHome('home')}
-		class={`rounded-full ${$darkMode ? 'bg-light text-dark' : 'bg-dark text-light'} p-2`}
+		class={`rounded-full ${$darkMode ? 'bg-light text-dark' : 'bg-dark text-light'} p-2 max-sm:hidden`}
 	>
 		<i class="bi bi-arrow-up"></i>
 	</button>

@@ -5,4 +5,4 @@
 
 <Home darkMode={$darkMode} />
 <Techstack {techstack} />
-<Projects {projects} darkMode={$darkMode} />
+<Projects />
