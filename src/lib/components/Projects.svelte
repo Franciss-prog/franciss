@@ -1,41 +1,75 @@
 <script lang="ts">
 	import { Command } from '$lib';
 	import { projects } from '$lib/data';
-	import type { Data } from '$lib/data';
+	import Description from './Description.svelte';
+	export let darkMode;
 
-	// Utility: create tree-style ASCII
-	function renderProjectsTree(projects: Data[]): string {
-		let output = 'Projects\n';
+	// Instead of just the id, store the whole project or null
+	let openProject: (typeof projects)[number] | null = null;
 
-		projects.forEach((project, i) => {
-			const isLast: boolean = i === projects.length - 1;
-			const prefix: string = isLast ? '└── ' : '├── ';
+	const open = (id: number) => {
+		openProject = projects.find((p) => p.id === id) || null;
+	};
 
-			output += `${prefix}${project.title}\n`;
-
-			const childPrefix: string = isLast ? '    ' : '│   ';
-
-			if (project.details) {
-				output += `${childPrefix}├── Details: ${project.details}\n`;
-			}
-			if (project.techStack && project.techStack.length > 0) {
-				output += `${childPrefix}├── TechStack: ${project.techStack.join(', ')}\n`;
-			}
-			if (project.sourceCode) {
-				output += `${childPrefix}├── Source: ${project.sourceCode}\n`;
-			}
-			if (project.liveDemo) {
-				output += `${childPrefix}└── Demo:   ${project.liveDemo}\n`;
-			}
-		});
-
-		return output;
-	}
-
-	const projectsAscii: string = renderProjectsTree(projects);
+	const close = () => {
+		openProject = null;
+	};
 </script>
 
 <section>
 	<Command command="ls -la Projects/" />
-	<pre class="text-base">{projectsAscii}</pre>
+
+	<div
+		class="grid grid-cols-3 justify-between gap-4 max-md:grid-cols-2 max-sm:grid-cols-1
+"
+	>
+		{#each projects as { title, id } (id)}
+			<button class="flex w-fit flex-col items-start gap-2 text-6xl" on:click={() => open(id)}>
+				{#if openProject?.id === id}
+					<i class="bi bi-folder2-open"></i>
+				{:else}
+					<i class="bi bi-folder2"></i>
+				{/if}
+				<span class="text-lg">{title}</span>
+			</button>
+		{/each}
+	</div>
 </section>
+
+{#if openProject}
+	<!-- Overlay -->
+	<div
+		class="fixed inset-0 flex items-center justify-center bg-black/50 p-20"
+		on:click={close}
+		on:keydown={(e) => {
+			if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close();
+		}}
+		role="button"
+		tabindex="0"
+	>
+		<!-- Modal -->
+		<div
+			class={`w-full rounded-2xl p-6 shadow-xl ${
+				darkMode ? 'bg-dark text-white' : 'bg-white text-black'
+			} flex flex-col items-start gap-2`}
+		>
+			<h2 class="mb-2 text-xl font-bold">{openProject.title}</h2>
+			<Description description={openProject.details} />
+
+			<div class="flex items-start gap-2">
+				{#each openProject.techStack ?? [] as tech (tech)}
+					<Description description={tech} />
+				{/each}
+			</div>
+
+			<div class="mt-4 flex gap-4">
+				{#if openProject?.sourceCode}
+					<a href={openProject.sourceCode} target="_blank">Source Code</a>
+				{/if}
+				{#if openProject?.liveDemo}
+					<a href={openProject.liveDemo} target="_blank" class="underline">Live Demo</a>
+				{/if}
+			</div>
+		</div>
+	</div>
+{/if}

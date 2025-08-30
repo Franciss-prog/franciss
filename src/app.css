@@ -8,11 +8,11 @@
 	--color-subDark: #222222;
 	--color-light: #fafafa;
 }
-button {
-	@apply cursor-pointer;
-}
 pre {
 	font-family: 'JetBrains Mono', monospace;
+}
+button {
+	cursor: pointer;
 }
 body {
 	font-family: 'Minecraft';
