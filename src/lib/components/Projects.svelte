@@ -20,8 +20,8 @@
 	<Command command="ls -la Projects/" />
 
 	<div
-		class="grid grid-cols-3 justify-between gap-4 max-md:grid-cols-2 max-sm:grid-cols-1
-"
+		class="grid grid-cols-3 justify-between gap-4 max-md:grid-cols-2 max-md:items-center
+max-md:justify-center max-sm:grid-cols-1"
 	>
 		{#each projects as { title, id } (id)}
 			<button class="flex w-fit flex-col items-start gap-2 text-6xl" on:click={() => open(id)}>
@@ -39,7 +39,7 @@
 {#if openProject}
 	<!-- Overlay -->
 	<div
-		class="fixed inset-0 flex items-center justify-center bg-black/50 p-20"
+		class="fixed inset-0 flex items-center justify-center bg-black/50 p-20 max-md:p-10"
 		on:click={close}
 		on:keydown={(e) => {
 			if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') close();
@@ -50,13 +50,13 @@
 		<!-- Modal -->
 		<div
 			class={`w-full rounded-2xl p-6 shadow-xl ${
-				darkMode ? 'bg-dark text-white' : 'bg-white text-black'
+				darkMode ? 'bg-dark ' : 'bg-light'
 			} flex flex-col items-start gap-2`}
 		>
 			<h2 class="mb-2 text-xl font-bold">{openProject.title}</h2>
 			<Description description={openProject.details} />
 
-			<div class="flex items-start gap-2">
+			<div class="flex items-start gap-2 max-md:grid max-md:grid-cols-2">
 				{#each openProject.techStack ?? [] as tech (tech)}
 					<Description description={tech} />
 				{/each}
