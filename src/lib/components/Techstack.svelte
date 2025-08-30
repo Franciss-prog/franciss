@@ -12,15 +12,15 @@
 	<div class="flex flex-col gap-20 max-md:gap-14 max-sm:gap-10">
 		{#each techstack as { title, url, logo, details } (title)}
 			<div
-				class="flex w-full items-center justify-between gap-10 p-3
-					   max-md:flex-col max-md:items-center max-md:gap-6
-					   max-sm:gap-4 max-sm:p-2"
+				class="flex w-full items-center gap-10 p-3
+		       max-md:flex-col
+		       max-sm:gap-4 max-sm:p-2"
 			>
-				<a class="flex items-start gap-3" href={url}>
+				<a class="flex flex-shrink-0 justify-center" href={url}>
 					<Ascii name={logo as AsciiKey} />
 				</a>
 
-				<div class="flex flex-col gap-3 text-left max-md:text-start max-sm:gap-2 max-sm:text-sm">
+				<div class="flex flex-col gap-3 text-left max-sm:gap-2 max-sm:text-sm">
 					<span class="text-xl max-sm:text-lg">{title}</span>
 					<Description description={details} />
 				</div>

@@ -13,7 +13,7 @@
 |_|  |_|  \__,_|_| |_|\___|_|___/___/
 
   </pre>
-	<p class="inline">
+	<p class="inline items-center">
 		I turn complex code into something simple and clear. I mostly work with Svelte and Next.js, but
 		I also enjoy exploring — from running a homelab and customizing Hyprland on Arch, to tweaking my
 		old PSP because I love handheld consoles.

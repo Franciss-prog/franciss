@@ -26,7 +26,7 @@ export const projects: Data[] = [
 		details:
 			'A simple to-do list application with user authentication and database support, designed to keep tasks organized and accessible anywhere.',
 		techStack: ['NextJS', 'TailwindCSS', 'MongoDB', 'Vercel'],
-		liveDemo: 'https://listify.vercel.app'
+		liveDemo: 'https://production-omega-rust.vercel.app/'
 	}
 ];
 
