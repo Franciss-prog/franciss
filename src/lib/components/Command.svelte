@@ -4,5 +4,5 @@
 
 <div>
 	<span class="text-2xl max-md:text-xl max-sm:text-lg">$: {command}</span>
-	<hr class="mb-10" />
+	<hr class="mb-10 border-dashed" />
 </div>

@@ -5,7 +5,7 @@
 <nav
 	class="flex h-16 w-full items-end justify-between border-b p-3 {$darkMode
 		? 'bg-dark text-light'
-		: 'bg-light text-dark'} border-b"
+		: 'bg-light text-dark'} border-b border-dashed"
 >
 	<div class="flex items-center gap-5">
 		<div class="flex gap-2">

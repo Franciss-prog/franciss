@@ -27,6 +27,15 @@ export const projects: Data[] = [
 			'A simple to-do list application with user authentication and database support, designed to keep tasks organized and accessible anywhere.',
 		techStack: ['NextJS', 'TailwindCSS', 'MongoDB', 'Vercel'],
 		liveDemo: 'https://production-omega-rust.vercel.app/'
+	},
+	{
+		id: 3,
+		title: 'Dotfiles',
+		details:
+			'A customized Linux + Hyprland environment built for productivity and full-stack development workflows. Includes window management tweaks, shell scripting, and a polished UI/UX theme for an efficient coding setup.',
+		techStack: ['Hyprland', 'Wayland', 'Shell Scripting', 'Linux'],
+		sourceCode: 'https://github.com/Franciss-prog/mydotfiles',
+		liveDemo: ''
 	}
 ];
 

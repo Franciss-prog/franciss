@@ -20,17 +20,20 @@
 	<Command command="ls -la Projects/" />
 
 	<div
-		class="grid grid-cols-3 justify-between gap-4 max-md:grid-cols-2 max-md:items-center
-max-md:justify-center max-sm:grid-cols-1"
+		class="grid grid-cols-3 justify-between gap-4
+max-md:grid-cols-2 max-md:items-center max-md:justify-center max-sm:grid-cols-1"
 	>
 		{#each projects as { title, id } (id)}
-			<button class="flex w-fit flex-col items-start gap-2 text-6xl" on:click={() => open(id)}>
+			<button
+				class="flex w-fit flex-col items-start gap-2 text-6xl max-md:text-4xl max-sm:text-2xl"
+				on:click={() => open(id)}
+			>
 				{#if openProject?.id === id}
 					<i class="bi bi-folder2-open"></i>
 				{:else}
 					<i class="bi bi-folder2"></i>
 				{/if}
-				<span class="text-lg">{title}</span>
+				<span class="max-sm:text-md text-xl max-md:text-lg">{title}</span>
 			</button>
 		{/each}
 	</div>

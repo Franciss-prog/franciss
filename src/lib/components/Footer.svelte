@@ -6,7 +6,7 @@
 
 <footer
 	class={`flex  h-20 w-full items-center justify-between gap-4 border-t px-10 
-py-4    ${$darkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}
+py-4    ${$darkMode ? 'bg-dark text-light' : 'bg-light text-dark'} border-dashed`}
 >
 	<!-- Logo -->
 	<a href="/" class="flex-shrink-0">
