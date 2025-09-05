@@ -56,7 +56,7 @@ max-md:grid-cols-2 max-md:items-center max-md:justify-center max-sm:grid-cols-1"
 				darkMode ? 'bg-dark ' : 'bg-light'
 			} flex flex-col items-start gap-2`}
 		>
-			<h2 class="mb-2 text-xl font-bold">{openProject.title}</h2>
+			<h2 class="max-sm:text-md mb-2 text-xl font-bold max-md:text-lg">{openProject.title}</h2>
 			<Description description={openProject.details} />
 
 			<div class="flex items-start gap-2 max-md:grid max-md:grid-cols-2">
@@ -65,7 +65,7 @@ max-md:grid-cols-2 max-md:items-center max-md:justify-center max-sm:grid-cols-1"
 				{/each}
 			</div>
 
-			<div class="mt-4 flex gap-4">
+			<div class="mt-4 flex gap-4 text-base">
 				{#if openProject?.sourceCode}
 					<a href={openProject.sourceCode} target="_blank">Source Code</a>
 				{/if}

@@ -36,6 +36,16 @@ export const projects: Data[] = [
 		techStack: ['Hyprland', 'Wayland', 'Shell Scripting', 'Linux'],
 		sourceCode: 'https://github.com/Franciss-prog/mydotfiles',
 		liveDemo: ''
+	},
+
+	{
+		id: 4,
+		title: 'Client Works',
+		details:
+			'A set of landing page websites (about 4 pages each) made for clients. Built with a clean design, responsive layout, and easy navigation.',
+		techStack: ['HTML', 'CSS', 'TailwindCSS'],
+		sourceCode: 'https://github.com/Franciss-prog/works',
+		liveDemo: ''
 	}
 ];
 
