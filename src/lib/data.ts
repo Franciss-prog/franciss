@@ -46,6 +46,24 @@ export const projects: Data[] = [
 		techStack: ['HTML', 'CSS', 'TailwindCSS'],
 		sourceCode: 'https://github.com/Franciss-prog/works',
 		liveDemo: ''
+	},
+
+	{
+		id: 5,
+		title: 'Axisgate',
+		details:
+			'A tool that lets Minecraft players see the coordinates between overworld and dimensional world.',
+		techStack: ['NextJS', 'TailwindCSS'],
+		sourceCode: 'https://github.com/Franciss-prog/axisgate.git',
+		liveDemo: 'https://axisgate.vercel.app'
+	},
+
+	{
+		id: 6,
+		title: 'TrajectoSim',
+		details: 'A simple simulation on how projectile motion works.',
+		sourceCode: 'https://github.com/Franciss-prog/trojectosim.git',
+		liveDemo: 'https://trojectosim.vercel.app'
 	}
 ];
 
