@@ -2,6 +2,7 @@
 	import { Command } from '$lib';
 	import { projects } from '$lib/data';
 	import Description from './Description.svelte';
+	import { slide } from 'svelte/transition';
 	export let darkMode;
 
 	// Instead of just the id, store the whole project or null
@@ -52,6 +53,10 @@ max-md:grid-cols-2 max-md:items-center max-md:justify-center max-sm:grid-cols-1"
 	>
 		<!-- Modal -->
 		<div
+			transition:slide
+			on:click|stopPropagation
+			on:keydown|stopPropagation
+			role="presentation"
 			class={`w-full rounded-2xl p-6 shadow-xl ${
 				darkMode ? 'bg-dark ' : 'bg-light'
 			} flex flex-col items-start gap-2`}
